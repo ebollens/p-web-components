@@ -1,0 +1,21 @@
+<!-- HTML Import for the fieldset[is="control-group"] element -->
+
+<script type="text/javascript" src="../libraries/jquery.js"></script>
+
+<script type='text/javascript'>
+    Promise.all([
+            'helpers/hierarchicalGroupValue',
+            'helpers/dataName'
+        ].map(function(m){ return System.import(m) })
+    ).then(function(m) {
+        var hierarchicalGroupValue = m[0],
+            dataName = m[1];
+        window.ControlGroupElement = document.registerElement('control-group', {
+            extends: 'fieldset',
+            prototype: Object.create(HTMLFieldSetElement.prototype, {
+                value: hierarchicalGroupValue,
+                name: dataName
+            })
+        });
+    });
+</script>

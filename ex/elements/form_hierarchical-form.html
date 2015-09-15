@@ -1,0 +1,37 @@
+<!-- HTML Import for the form[is="hierarchical-form"] element -->
+
+<script type="text/javascript" src="../libraries/jquery.js"></script>
+
+<script type='text/javascript'>
+    System.import('helpers/hierarchicalGroupValue').then(function(hierarchicalGroupValue){
+        window.HierarchicalFormElement = document.registerElement('hierarchical-form', {
+            extends: 'form',
+            prototype: Object.create(HTMLFormElement.prototype, {
+                value: hierarchicalGroupValue,
+                attachedCallback: {
+                    value: function(){
+                        var form = this;
+                        $(this).submit(function(e){
+                            e.preventDefault();
+                            $.ajax({
+                                url: $(form).attr('action') ? $(form).attr('action') : '#',
+                                method: $(form).attr('method') ? $(form).attr('method') : 'GET',
+                                data: JSON.stringify(form.value),
+                                contentType: 'application/json; charset=utf-8',
+                                success: function(){ 
+                                    if($(form).attr('data-success'))
+                                        window.location = $(form).attr('data-success'); 
+                                },
+                                error: function(){ 
+                                    console.log(arguments)
+                                    if($(form).attr('data-error'))
+                                        window.location = $(form).attr('data-error'); 
+                                }
+                            })
+                        })
+                    }
+                }
+            })
+        });
+    });
+</script>

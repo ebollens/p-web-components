@@ -4,10 +4,10 @@
 	<head>
 		<meta charset="utf-8">
 
-		<title>reveal.js - The HTML Presentation Framework</title>
+		<title>The Component Future of HTML</title>
 
-		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
-		<meta name="author" content="Hakim El Hattab">
+		<meta name="description" content="">
+		<meta name="author" content="Eric R. Bollens">
 
 		<meta name="apple-mobile-web-app-capable" content="yes" />
 		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
@@ -15,7 +15,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
 
 		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+		<link rel="stylesheet" href="css/theme/cloudcompli.css" id="theme">
 
 		<!-- Code syntax highlighting -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -37,341 +37,1071 @@
 	<body>
 
 		<div class="reveal">
+                
+            <header>
+                <img src="img/cloudcompli-logo.png">
+            </header>
+
+            <footer>
+                <a href="http://eb.io/p-web-components" target="_blank">eb.io/p-web-components</a>
+            </footer>
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
+                
 				<section>
-					<h1>Reveal.js</h1>
-					<h3>The HTML Presentation Framework</h3>
+					<h1>Component<br>Future of HTML</h2>
 					<p>
-						<small>Created by <a href="http://hakim.se">Hakim El Hattab</a> / <a href="http://twitter.com/hakimel">@hakimel</a></small>
+						<small>Eric Bollens / <a href="mailto:eric@eb.io">eric@eb.io</a> / <a href="http://github.com/ebollens">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens">@ericbollens [Twitter]</a></small>
 					</p>
 				</section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Before We Start...</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>About This Presentation</h2>
+                        <p class='fragment'>
+                            <strong>The slides from this presentation</strong>
+                            <br><em><a href='http://eb.io/ghp/p-web-components' target='_blank'>eb.io/p-web-components</a></em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Example code from this presentation</strong>
+                            <br><em><a href='https://github.com/ebollens/p-web-components/ex' target='_blank'>github.com/ebollens/p-web-components/ex</a></em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>This presentation is open source</strong>
+                            <br><em><a href='https://github.com/ebollens/p-web-components' target='_blank'>github.com/ebollens/p-web-components</a></em>
+                        </p>
+                    </section>
+                
+                    <section>
+                        <h2>About Me</h2>
+                        <p class="fragment">
+                            Chief Technology Officer
+                            <br><img src="img/cloudcompli-logo.png" style="border:0;background:none;box-shadow:none;height:1em;">
+                        </p>
+                        <p class='fragment'>
+                            Formerly,
+                            Open Source Architect
+                            <br><img src="img/ucla-logo.png" style="border:0;background:none;box-shadow:none;height:1em;">
+                            <img src="img/oit-logo.png" style="border:0;background:none;box-shadow:none;height:1em;">
+                        </p>
+                        <p class='fragment'>Open source, modern web &amp; IoT evangelist</p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>The Original Vision for HTML</h2>
+                        <p class='fragment'>Originally, just text and links</p>
+                        <p class="fragment">Support added for images and media</p>
+                        <p class="fragment">Becomes a publishing and marketing medium</p>
+                        <p class='fragment'><strong>By the late 1990's, the web was no longer optional</strong></p>
+                    </section>
+                    
+                    <section>
+                        <h2>From Information to Interaction</h2>
+                        <p class='fragment'><strong>DotCom era bore a new generation of web tech</strong></p>
+                        <p>
+                            <em class='fragment'>eCommerce</em>
+                            <br><em class='fragment'>Social networks</em>
+                            <br><em class='fragment'>Blogs, wikis and podcasts</em>
+                            <br><em class='fragment'>Streaming services</em>
+                        </p>
+                        <p class='fragment'><strong>Boom turned to bust, but "Web 2.0" remained</strong></p>
+                        <p>
+                            <em class='fragment'>Rich Internet Applications</em>
+                            <br><em class='fragment'>Web-oriented Architecture</em>
+                            <br><em class='fragment'>Social Web</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Keeping Up with the Changing Model</h2>
+                        <p class="fragment"><strong>HTML suffers from its success</strong></p>
+                        <p>
+                            <em class='fragment'>Divitis</em>
+                            <br>
+                            <em class="fragment">XHTML, DHTML, ActiveX, Java</em>
+                            <br>
+                            <em class='fragment'>JavaScript Mega-Frameworks</em>
+                            <br>
+                            <em class='fragment'>Flash &amp; Silverlight</em>
+                        </p>
+                        <p class="fragment"><strong>HTML 5</strong></p>
+                        <p>
+                            <em class='fragment'>Structural semantics</em>
+                            <br>
+                            <em class='fragment'>Interactive features</em>
+                        </p>
+                        <p class='fragment'><strong>A larger feature set... but still a discrete one</span></strong></p>
+                    </section>
+                    
+                    <section>
+                        <h2>Beyond Discrete Semantics</h2>
+                        <p class='fragment'><strong>Semantics should be</strong></p>
+                        <p>
+                            <em class='fragment'>Domain-applicable</em>
+                            <br>
+                            <em class='fragment'>Expressive</em>
+                            <br>
+                            <em class='fragment'>Encapsulated</em>
+                            <br>
+                            <em class='fragment'>Reusable</em>
+                            <br>
+                            <em class='fragment'>Composable</em>
+                            <br>
+                            <em class='fragment'>Extensible</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Web Components</h2>
+                        <p class='fragment'>
+                            <strong>Custom Elements</strong>
+                            <br><em>define new HTML tags</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>HTML Templates</strong>
+                            <br><em>inject dynamic content into static markup structures</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Shadow DOM</strong>
+                            <br><em>scope markup and styles in a separate DOM tree</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>HTML Imports</strong>
+                            <br><em>import HTML documents into other HTML documents</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>We'll Also Touch On</h2>
+                        <p class='fragment'>
+                            <strong>ES6 Modules &amp; Module Loading</strong>
+                            <br><em>for keeping JavaScript namespaces sane</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Polyfills</strong>
+                            <br><em>bringing the future to today</em>
+                        </p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>A Motivating Example</h2>
+                        <p class='fragment'><strong>Data collection @ CloudCompli</strong></p>
+                        <p>
+                            <em class="fragment">Develop software for environmental compliance</em>
+                            <br>
+                            <em class='fragment'>Workflows driven by inspections &amp; other data collection</em>
+                            <br>
+                            <em class='fragment'>Compliance isn't simple or accommodating</em>
+                            <br>
+                            <em class='fragment'>Need a simple definition language for complex forms</em>
+                        </p>
+                        <p class='fragment'><strong>We need more than HTML forms offer out-of-the-box</strong></p>
+                    </section>
+                    
+                    <section>
+                        <img src="img/cc-form.png" style="width:500px">
+                    </section>
+                    
+                    <section>
+                        <h2>Why Isn't HTML Enough?</h2>
+                        <p class='fragment'>
+                            <strong>HTML forms are flat</strong>
+                            <br><em>Hard to represent sets, sub-structures &amp; complex data types</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>HTML forms are missing controls we need</strong>
+                            <br><em>Signatures, geocoding, graphical, etc.</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>HTML forms are weak on behavioral definitions</strong>
+                            <br><em>Conditional applicability, multi-group sets, etc.</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>A Comparison</h2>
+                        <p class="fragment">
+                            <strong>The Old Way</strong>
+                            <br><em class="fragment">Most forms over 1k LOC</em>
+                            <br><em class="fragment">Largest form over 3k LOC</em>
+                            <br><em class="fragment">Limited reusability</em>
+                            <br><em class="fragment">Mid-level engineer required</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>The New Way</strong>
+                            <br><em class="fragment">Largest form less than 1k LOC</em>
+                            <br><em class="fragment">Control behaviors completely reusable</em>
+                            <br><em class="fragment">"Intern-ready"</em>
+                        </p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Custom Elements</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Basics</h2>
+                        <p class="fragment">Register a custom element</p>
+                        <pre class="fragment"><code>var XFoo = document.registerElement('x-foo');</code></pre>
+                        <p class="fragment">Use within the DOM</p>
+                        <pre class="fragment"><code>&lt;x-foo&gt;&lt;/x-foo&gt;</code></pre>
+                        <p class="fragment">Instantiate the element</p>
+                        <pre class="fragment"><code >document.body.appendChild(new XFoo());</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>More About Registration</h2>
+                        <pre class="fragment"><code class="javascript">var XFoo = document.registerElement('x-foo');</code></pre>
+                        <pre class="fragment"><code class="javascript">var XFoo = document.registerElement('x-foo', { 
+  prototype: Object.create(HTMLElement.prototype) 
+});</code></pre>
+                        <pre class="fragment"><code class="javascript">var XFooProto = Object.create(HTMLElement.prototype);
 
-				<section>
-					<h2>Hello There</h2>
-					<p>
-						reveal.js enables you to create beautiful interactive slide decks using HTML. This presentation will show you examples of what it can do.
-					</p>
-				</section>
+XFooProto.foo = function() { alert('foo() called'); };
 
-				<!-- Example of nested vertical slides -->
-				<section>
-					<section>
-						<h2>Vertical Slides</h2>
-						<p>Slides can be nested inside of each other.</p>
-						<p>Use the <em>Space</em> key to navigate through all slides.</p>
-						<br>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section>
-						<h2>Basement Level 1</h2>
-						<p>Nested slides are useful for adding additional detail underneath a high level horizontal slide.</p>
-					</section>
-					<section>
-						<h2>Basement Level 2</h2>
-						<p>That's it, time to go back up.</p>
-						<br>
-						<a href="#/2">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Up arrow" style="transform: rotate(180deg); -webkit-transform: rotate(180deg);">
-						</a>
-					</section>
-				</section>
+XFooProto.bar = 5;
 
-				<section>
-					<h2>Slides</h2>
-					<p>
-						Not a coder? Not a problem. There's a fully-featured visual editor for authoring these, try it out at <a href="http://slides.com" target="_blank">http://slides.com</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Point of View</h2>
-					<p>
-						Press <strong>ESC</strong> to enter the slide overview.
-					</p>
-					<p>
-						Hold down alt and click on any element to zoom in on it using <a href="http://lab.hakim.se/zoom-js">zoom.js</a>. Alt + click anywhere to zoom back out.
-					</p>
-				</section>
-
-				<section>
-					<h2>Touch Optimized</h2>
-					<p>
-						Presentations look great on touch devices, like mobile phones and tablets. Simply swipe through your slides.
-					</p>
-				</section>
-
-				<section data-markdown>
-					<script type="text/template">
-						## Markdown support
-
-						Write content using inline or external Markdown.
-						Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-
-						```
-						<section data-markdown>
-						  ## Markdown support
-
-						  Write content using inline or external Markdown.
-						  Instructions and more info available in the [readme](https://github.com/hakimel/reveal.js#markdown).
-						</section>
-						```
-					</script>
-				</section>
-
-				<section>
-					<section id="fragments">
-						<h2>Fragments</h2>
-						<p>Hit the next arrow...</p>
-						<p class="fragment">... to step through ...</p>
-						<p><span class="fragment">... a</span> <span class="fragment">fragmented</span> <span class="fragment">slide.</span></p>
-
-						<aside class="notes">
-							This slide has fragments which are also stepped through in the notes window.
-						</aside>
-					</section>
-					<section>
-						<h2>Fragment Styles</h2>
-						<p>There's different types of fragments, like:</p>
-						<p class="fragment grow">grow</p>
-						<p class="fragment shrink">shrink</p>
-						<p class="fragment fade-out">fade-out</p>
-						<p class="fragment current-visible">current-visible</p>
-						<p class="fragment highlight-red">highlight-red</p>
-						<p class="fragment highlight-blue">highlight-blue</p>
-					</section>
-				</section>
-
-				<section id="transitions">
-					<h2>Transition Styles</h2>
-					<p>
-						You can select from different transitions, like: <br>
-						<a href="?transition=none#/transitions">None</a> -
-						<a href="?transition=fade#/transitions">Fade</a> -
-						<a href="?transition=slide#/transitions">Slide</a> -
-						<a href="?transition=convex#/transitions">Convex</a> -
-						<a href="?transition=concave#/transitions">Concave</a> -
-						<a href="?transition=zoom#/transitions">Zoom</a>
-					</p>
-				</section>
-
-				<section id="themes">
-					<h2>Themes</h2>
-					<p>
-						reveal.js comes with a few themes built in: <br>
-						<!-- Hacks to swap themes after the page has loaded. Not flexible and only intended for the reveal.js demo deck. -->
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/black.css'); return false;">Black (default)</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/white.css'); return false;">White</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/league.css'); return false;">League</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/sky.css'); return false;">Sky</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/beige.css'); return false;">Beige</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/simple.css'); return false;">Simple</a> <br>
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/serif.css'); return false;">Serif</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/blood.css'); return false;">Blood</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/night.css'); return false;">Night</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/moon.css'); return false;">Moon</a> -
-						<a href="#" onclick="document.getElementById('theme').setAttribute('href','css/theme/solarized.css'); return false;">Solarized</a>
-					</p>
-				</section>
-
-				<section>
-					<section data-background="#dddddd">
-						<h2>Slide Backgrounds</h2>
-						<p>
-							Set <code>data-background="#dddddd"</code> on a slide to change the background color. All CSS color formats are supported.
-						</p>
-						<a href="#" class="navigate-down">
-							<img width="178" height="238" data-src="https://s3.amazonaws.com/hakim-static/reveal-js/arrow.png" alt="Down arrow">
-						</a>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png">
-						<h2>Image Backgrounds</h2>
-						<pre><code>&lt;section data-background="image.png"&gt;</code></pre>
-					</section>
-					<section data-background="https://s3.amazonaws.com/hakim-static/reveal-js/image-placeholder.png" data-background-repeat="repeat" data-background-size="100px">
-						<h2>Tiled Backgrounds</h2>
-						<pre><code style="word-wrap: break-word;">&lt;section data-background="image.png" data-background-repeat="repeat" data-background-size="100px"&gt;</code></pre>
-					</section>
-					<section data-background-video="https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.mp4,https://s3.amazonaws.com/static.slid.es/site/homepage/v1/homepage-video-editor.webm" data-background-color="#000000">
-						<div style="background-color: rgba(0, 0, 0, 0.9); color: #fff; padding: 20px;">
-							<h2>Video Backgrounds</h2>
-							<pre><code style="word-wrap: break-word;">&lt;section data-background-video="video.mp4,video.webm"&gt;</code></pre>
-						</div>
-					</section>
-					<section data-background="http://i.giphy.com/90F8aUepslB84.gif">
-						<h2>... and GIFs!</h2>
-					</section>
-				</section>
-
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						Different background transitions are available via the backgroundTransition option. This one's called "zoom".
-					</p>
-					<pre><code>Reveal.configure({ backgroundTransition: 'zoom' })</code></pre>
-				</section>
-
-				<section data-transition="slide" data-background="#b5533c" data-background-transition="zoom">
-					<h2>Background Transitions</h2>
-					<p>
-						You can override background transitions per-slide.
-					</p>
-					<pre><code style="word-wrap: break-word;">&lt;section data-background-transition="zoom"&gt;</code></pre>
-				</section>
-
-				<section>
-					<h2>Pretty Code</h2>
-					<pre><code data-trim contenteditable>
-function linkify( selector ) {
-  if( supports3DTransforms ) {
-
-    var nodes = document.querySelectorAll( selector );
-
-    for( var i = 0, len = nodes.length; i &lt; len; i++ ) {
-      var node = nodes[i];
-
-      if( !node.className ) {
-        node.className += ' roll';
+var XFoo = document.registerElement('x-foo', {
+  prototype: XFooProto
+});</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Extending an Element</h2>
+                        <pre class='fragment'><code class='javascript'>var MegaButton = document.registerElement('mega-button', { 
+  prototype: Object.create(HTMLButtonElement.prototype), 
+  extends: 'button'
+});</code></pre>
+                        <p class='fragment'>Attributes, methods and callbacks inherited from &nbsp;<code>button</code></p>
+                        <pre class='fragment'><code class='html'>&lt;button is="mega-button"&gt;</code></pre>
+                        <pre class='fragment'><code class='javascript'>var megaButton = document.createElement('button', 'mega-button');</code></pre>
+                        <pre class='fragment'><code class='css'>[is="mega-button"] { font-size: 2em; }</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>For Convinience, Setters &amp; Getters</h2>
+                        <pre class="fragment"><code>var XFooProto = Object.create(HTMLElement.prototype);
+XFooProto.foo = function() { alert('foo() called'); };
+XFooProto.bar = 5;
+var XFoo = document.registerElement('x-foo', {
+  prototype: XFooProto
+});</code></pre>
+                        <pre class="fragment"><code>var XFoo = document.registerElement('x-foo', { 
+  prototype: Object.create(HTMLElement.prototype, { 
+    foo: { 
+      value: function() { alert('foo() called'); } 
+    },
+    bar: { 
+      get: function() { return 5; } 
+    }
+  })
+});
+</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Custom Element Lifecycle</h2>
+                        <p class="fragment"><strong>createdCallback</strong>
+                            <br><em>when instance of element is created</em></p>
+                        <p class="fragment"><strong>attachedCallback</strong>
+                            <br><em>when an instance is inserted into the document</em></p>
+                        <p class="fragment"><strong>detachedCallback</strong>
+                            <br><em>when an instance is removed fmor the document</em></p>
+                        <p class="fragment"><strong>attribuedChangedCallback(attrName, oldVal, newVal)</strong>
+                            <br><em>when an attribute is added, removed or updated</em></p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Putting Custom Elements to Work</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Latitude Input: Custom Callback</h2>
+                        <pre class="fragment"><code>&lt;input is="type-lat" name="latitude"&gt;</code></pre>
+                        <pre class="fragment"><code>var initializeInputTypeLat = function(){
+  var self = this;
+  self.type = 'number';
+  self.min = -90;
+  self.max = 90;
+  self.step = 'any';
+  navigator.geolocation.getCurrentPosition(function(position){
+    self.value = position.coords.latitude;
+  });
+}</code></pre>
+                        <pre class="fragment"><code>document.registerElement('type-lat', {
+  extends: 'input',
+  prototype: Object.create(HTMLInputElement.prototype, {
+    attachedCallback: {
+      value: initializeInputTypeLat
+    }
+  })
+});</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Nested Data</h2>
+                        <pre class="fragment"><code class="xml">&lt;form is="hierarchical-form" action="/report" method="POST"&gt;
+    &lt;input type="text" name="title"&gt;
+    &lt;fieldset is="control-group" data-name="location"&gt;
+        &lt;legend&gt;Location&lt;/legend&gt;
+        &lt;input is="type-lat" name="latitude"&gt;
+        &lt;input is="type-lng" name="longitude"&gt;
+    &lt;/fieldset&gt;
+    &lt;input type="submit"&gt;
+&lt;/form&gt;</code></pre>
+                        <pre class="fragment"><code>{
+    "title": "Example",
+    "location": {
+        "latitude": "34.068077", 
+        "longitude": "-118.442542"
+    }
+}</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Control Group</h2>
+                        <pre class="fragment"><code>&lt;fieldset is="control-group" data-name="location"&gt;
+    &lt;legend&gt;Location&lt;/legend&gt;
+    &lt;input is="type-lat" name="latitude"&gt;
+    &lt;input is="type-lng" name="longitude"&gt;
+&lt;/fieldset&gt;</code></pre>
+                        <pre class="fragment"><code>group.value == {
+    "latitude": "34.068077", 
+    "longitude": "-118.442542"
+}</code></pre>
+                        <p class="fragment">
+                            <strong><code>control-group</code> as a meta-field</strong>
+                            <br><em class="fragment">It's value should be an object of sub-fields</em>
+                            <br><em class="fragment">It's name should be used for form data or in a parent group</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Control Group: Value Getter</h2>
+                        <pre class="fragment"><code>document.registerElement('control-group', {
+  extends: 'fieldset',
+  prototype: Object.create(HTMLFieldSetElement.prototype, {
+    value: {
+      get: getValueForControlGroup
+    }
+  })
+});</code></pre>
+                            <pre class="fragment"><code>var getValueForControlGroup = function(){
+    var values = {};
+    $(this).find(processableSelector)
+           .not($(this).find(exclusionSelector))
+           .each(function(){
+        var name = $(this).attr('name');
+        if(name && this.value !== undefined){
+            values[name] = this.value;
+        }
+    });
+    return values;
+}</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Control Group: Name</h2>
+                        <p class="fragment"><code>data-name</code> attribute for fieldset name</p>
+                        <pre class="fragment"><code>document.registerElement('control-group', {
+  extends: 'fieldset',
+  prototype: Object.create(HTMLFieldSetElement.prototype, {
+    value: {
+      get: getValueForControlGroup
+    },
+    name: {
+      get: function(){
+        return $(this).attr('data-name');
+      },
+      set: function(value){
+        $(this).attr('data-name', value);
       }
     }
-  }
+  })
+});</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Control Group: Value Setter</h2>
+                        <pre class="fragment"><code>document.registerElement('control-group', {
+  extends: 'fieldset',
+  prototype: Object.create(HTMLFieldSetElement.prototype, {
+    value: {
+      get: getValueForControlGroup,
+      set: setValueForControlGroup
+    },
+    /* .. */
+  })
+});</code></pre>
+                        <pre class="fragment"><code>var setValueForControlGroup = function(){
+    $(this).find(processableSelector)
+       .not($(this).find(exclusionSelector))
+       .each(function(){
+            var name = this.name;
+            if(value[name])
+                this.value = value[name]
+    });
 }
-					</code></pre>
-					<p>Code syntax highlighting courtesy of <a href="http://softwaremaniacs.org/soft/highlight/en/description/">highlight.js</a>.</p>
-				</section>
+</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Form: Values</h2>
+                        <pre class="fragment"><code>form.value == {
+    "title": "Example",
+    "location": {
+        "latitude": "34.068077", 
+        "longitude": "-118.442542"
+}   }</code></pre>
+                        <pre class="fragment"><code>form.value = {
+    "some-group": {
+        "some-field": "some value"
+}   }</code></pre>
+                        <pre class="fragment"><code>document.registerElement('hierarchical-form', {
+    extends: 'form',
+    prototype: Object.create(HTMLFormElement.prototype, {
+        value: {
+            get: getValueForControlGroup,
+            set: setValueForControlGroup
+        }
+    })
+});</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Form: Submission</h2>
+                        <pre class='fragment'><code>&lt;form is="hierarchical-form" action="server/submit.php" method="POST"
+      data-success="server/success.php" data-error="server/error.php"&gt;</code></pre>
+                        <pre class="fragment"><code>document.registerElement('hierarchical-form', {
+    extends: 'form',
+    prototype: Object.create(HTMLFormElement.prototype, {
+        attachedCallback: {
+            value: function(){ overrideFormSubmitHandler(this); }
+}   })  });</code></pre>
+                        <pre class="fragment"><code>var overrideFormSubmitHandler = function(form){
+    $(form).submit(function(e){ 
+        e.preventDefault();
+        $.ajax({ url: $(form).attr('action'),
+                 method: $(form).attr('method'),
+                 data: JSON.stringify(form.value),
+                 contentType: 'application/json; charset=utf-8',
+                 success: function(){ 
+                     window.location = $(form).attr('data-success'); },
+                 error: function(){ 
+                     window.location = $(form).attr('data-error'); }
+})  })  };</code></pre>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Getting Organized</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Quickly Becoming a Mess</h2>
+                        <pre class="fragment"><code>(function(){
+    
+    var processableFields = [
+            'input', 
+            'textarea', 
+            'select', 
+            'fieldset[is="control-group"]'
+        ],
+        processableSelector = processableFields.join(', '),
+        exclusionSelector = processableFields
+            .map(function(f){ 
+                return 'fieldset[is="control-group"] '+f; 
+            }).join(', ');
+    
+    var HierarchicalGroupValueProperties = {
+        value: {
+            get: function(){
+                
+                var values = {}
 
-				<section>
-					<h2>Marvelous List</h2>
-					<ul>
-						<li>No order here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-						<li>Or here</li>
-					</ul>
-				</section>
+                $(this).find(processableSelector)
+                       .not($(this).find(exclusionSelector))
+                       .each(function(){
+                    var name = this.name;
+                    if(name && this.value !== undefined){
+                        values[name] = this.value;
+                    }
+                });
 
-				<section>
-					<h2>Fantastic Ordered List</h2>
-					<ol>
-						<li>One is smaller than...</li>
-						<li>Two is smaller than...</li>
-						<li>Three!</li>
-					</ol>
-				</section>
+                return values;
+            },
+            set: function(value){
+                
+                $(this).find(processableSelector)
+                       .not($(this).find(exclusionSelector))
+                       .each(function(){
+                    var name = this.name;
+                    if(value[name])
+                        this.value = value[name]
+                });
+                
+            }
+        }
+    }
+    
+    window.HierarchicalFormElement = document.registerElement(
+            'hierarchical-form', {
+        extends: 'form',
+        prototype: Object.create(HTMLFormElement.prototype, 
+                $.extend({}, HierarchicalGroupValueProperties, {
+            attachedCallback: {
+                value: function(){
+                    var form = this;
+                    $(this).submit(function(e){
+                        e.preventDefault();
+                        $.ajax({
+                            url: $(form).attr('action') 
+                                    ? $(form).attr('action') 
+                                    : '#',
+                            method: $(form).attr('method') 
+                                    ? $(form).attr('method') 
+                                    : 'GET',
+                            data: JSON.stringify(form.value),
+                            contentType: 
+                                'application/json; charset=utf-8',
+                            success: function(){ 
+                                if($(form).attr('data-success'))
+                                    window.location = 
+                                        $(form).attr('data-success'); 
+                            },
+                            error: function(){ 
+                                console.log(arguments)
+                                if($(form).attr('data-error'))
+                                    window.location = 
+                                        $(form).attr('data-error'); 
+                            }
+                        })
+                    })
+                }
+            }
+        }))
+    });
 
-				<section>
-					<h2>Tabular Tables</h2>
-					<table>
-						<thead>
-							<tr>
-								<th>Item</th>
-								<th>Value</th>
-								<th>Quantity</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr>
-								<td>Apples</td>
-								<td>$1</td>
-								<td>7</td>
-							</tr>
-							<tr>
-								<td>Lemonade</td>
-								<td>$2</td>
-								<td>18</td>
-							</tr>
-							<tr>
-								<td>Bread</td>
-								<td>$3</td>
-								<td>2</td>
-							</tr>
-						</tbody>
-					</table>
-				</section>
+    window.ControlGroupElement = document.registerElement(
+            'control-group', {
+        extends: 'fieldset',
+        prototype: Object.create(HTMLFieldSetElement.prototype, 
+                $.extend({}, HierarchicalGroupValueProperties, {
+            name: {
+                get: function(){
+                    return $(this).attr('data-name');
+                },
+                set: function(value){
+                    $(this).attr('data-name', value);
+                }
+            }
+        }))
+    });
 
-				<section>
-					<h2>Clever Quotes</h2>
+    window.InputTypeLatElement = document.registerElement(
+            'type-lat', {
+        extends: 'input',
+        prototype: Object.create(HTMLInputElement.prototype, {
+            attachedCallback: {
+                value: function(){
+                    var self = this;
+                    self.type = 'number';
+                    self.min = -90;
+                    self.max = 90;
+                    self.step = 'any';
+                    navigator.geolocation.getCurrentPosition(
+                        function(position){
+                            self.value = position.coords.latitude;
+                        });
+                }
+            }
+        })
+    });
+
+    window.InputTypeLngElement = document.registerElement(
+            'type-lng', {
+        extends: 'input',
+        prototype: Object.create(HTMLInputElement.prototype, {
+            attachedCallback: {
+                value: function(){
+                    var self = this;
+                    self.type = 'number';
+                    self.min = -180;
+                    self.max = 180;
+                    self.step = 'any';
+                    navigator.geolocation.getCurrentPosition(
+                        function(position){
+                            self.value = position.coords.longitude;
+                        });
+                }
+            }
+        })
+    });
+    
+})()</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Partial Loading</h2>
+                        <p class='fragment'><strong>Great for resources</strong></p>
+                        <p><em>
+                            <code class='fragment'>&lt;script src&gt;</code>
+                            <br>
+                            <code class='fragment'>&lt;link rel="stylesheet" href&gt;</code>
+                            <br>
+                            <span class='fragment'><code>&lt;img&gt;</code> , <code>&lt;video&gt;</code> &nbsp; and &nbsp;<code>&lt;img&gt;</code></span>
+                            <br>
+                            <span class='fragment'><code>&lt;embed&gt;</code> &nbsp; and &nbsp;<code>&lt;object&gt;</code></span>
+                        </em></p>
+                        <p class='fragment'><strong>But historically bad for HTML</strong></p>
+                        <p>
+                            <em class="fragment">AJAX</em>
+                            <br>
+                            <em class="fragment"><code>&lt;iframe&gt;</code></em>
+                            <br>
+                            <em class="fragment">Hacks (overloading <code>&lt;script&gt;</code>, hiding in comments, etc.)</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>HTML Imports</h2>
+                        <pre class="fragment"><code>&lt;link rel='import' href='elements/fieldset_control-group.html'&gt;</code></pre>
+                        <pre class="fragment"><code>&lt;script type='text/javascript' src="../libraries/jquery.js"&gt;&lt;/script&gt;
+&lt;script type='text/javascript'&gt;
+document.registerElement('control-group', {
+    /* .. */
+});
+&lt;/script&gt;</code></pre>
+                        <p class="fragment">Support for recursion</p>
+                        <pre class="fragment"><code>&lt;link rel='import' href='elements.html'&gt;</code></pre>
+                        <pre class="fragment"><code>&lt;link rel='import' href='elements/form_hierarchical-form.html'&gt;
+&lt;link rel='import' href='elements/fieldset_control-group.html'&gt;
+&lt;link rel='import' href='elements/input_type-lat.html'&gt;
+&lt;link rel='import' href='elements/input_type-lng.html'&gt;</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Namespace Chaos</h2>
+                        <p class="fragment">Multiple elements may need the same routines</p>
+                        <pre class="fragment"><code>var HierarchicalGroupValue = (function(){
+
+    var processableFields = [
+            'input', 
+            'textarea', 
+            'select', 
+            'fieldset[is="control-group"]'
+        ],
+        processableSelector = processableFields.join(', '),
+        exclusionSelector = processableFields
+            .map(function(f){ 
+                return 'fieldset[is="control-group"] '+f; 
+            }).join(', ');
+
+    return {
+        get: function(){
+
+            var values = {}
+
+            $(this).find(processableSelector)
+                   .not($(this).find(exclusionSelector))
+                   .each(function(){
+                var name = this.name;
+                if(name && this.value !== undefined){
+                    values[name] = this.value;
+                }
+            });
+
+            return values;
+        },
+        set: function(){
+
+            $(this).find(processableSelector)
+                   .not($(this).find(exclusionSelector))
+                   .each(function(){
+                var name = this.name;
+                if(value[name])
+                    this.value = value[name]
+            });
+
+        }
+    };
+
+})();</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>ES6 Modules</h2>
+                        <pre class="fragment"><code style='overflow:hidden;'>var processableFields = ['input', 'textarea', 'select', 'fieldset[is="control-group"]'],
+    processableSelector = processableFields.join(', '),
+    exclusionSelector = processableFields.map(function(f){ 
+            return 'fieldset[is="control-group"] '+f; 
+        }).join(', ');
+export function get(){ /* .. */ };
+export function set(value){ /* .. */ };</code></pre>
+                        <pre class="fragment"><code>import { get } from 'hierarchicalGroupValue';
+get.call(element)</code></pre>
+                        <pre class="fragment"><code>import * from 'hierarchicalGroupValue';
+hierarchicalGroupValue.get.call(element)</code></pre>
+                        <pre class="fragment"><code>import * from 'hierarchicalGroupValue';
+document.registerElement('control-group', {
+    extends: 'form',
+    prototype: Object.create(HTMLFieldSetElement.prototype, {
+        value: hierarchicalGroupValue,
+        attachedCallback: { /* .. */ }
+    })
+});</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>ES6 Module Loader</h2>
+                        <pre class="fragment"><code>System.import('helpers/hierarchical-group-value').then(function(hgv){
+    document.registerElement('hierarchical-form', {
+        extends: 'form',
+        prototype: Object.create(HTMLFormElement.prototype, {
+            value: hgv,
+            /* .. */
+        })
+    });
+});
+</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Multiple ES6 Modules</h2>
+                        <pre class="fragment"><code>Promise.all([
+    'helpers/hierarchical-group-value', 'helpers/data-name'
+].map(function(m){ return System.import(m) })).then(function(m) {
+    var hierarchicalGroupValue = m[0],
+        dataName = m[1];
+    document.registerElement('control-group', {
+        extends: 'fieldset',
+        prototype: Object.create(HTMLFieldSetElement.prototype, {
+            value: hierarchicalGroupValue,
+            name: dataName
+        })
+    });
+});</code></pre>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Templates &amp; Shadow DOM</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>Multiple Group Control</h2>
+                        <p class='fragment'>Multiple sets of the same group of controls
+                            <br><span class='fragment'>and the ability to add more sets</span></p>
+                        <pre class='fragment'><code class='xml'>&lt;fieldset is='multi-group-control' data-name='issues'&gt;
+    &lt;legend&gt;Issues&lt;/legend&gt;
+    &lt;fieldset is="control-group"&gt;
+        &lt;input type='text' name='identifier'&gt;
+        &lt;textarea name='description'&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+    &lt;fieldset is="control-group"&gt;
+        &lt;input type='text' name='identifier'&gt;
+        &lt;textarea name='description'&gt;&lt;/textarea&gt;
+    &lt;/fieldset&gt;
+    &lt;!-- .. --&gt;
+    &lt;button&gt;+&lt;/button&gt;
+&lt;/fieldset&gt;</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Scaffolding the Control</h2>
+                        <p class='fragment'>Let's implement a Web Component for this where...</p>
+                        <p class='fragment'><em>you define a template for the group</em></p>
+                        <pre class='fragment'><code class='xml'>&lt;fieldset is='multi-group-control' data-name='issues'&gt;
+    &lt;legend&gt;Issues&lt;/legend&gt;
+    &lt;template&gt;
+        &lt;input type='text' name='identifier'&gt;
+        &lt;textarea name='description'&gt;&lt;/textarea&gt;
+    &lt;/template&gt;
+&lt;/fieldset&gt;</code></pre>
+                        <p class='fragment'><em>the value is an array of the group values</em></p>
+                        <pre class='fragment'><code class='json'>[
+    { "name": "..", "description": ".." },
+    { "name": "..", "description": ".." }
+]</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Template Element</h2>
+                        <p class="fragment">
+                            <strong>Inert until activated</strong>
+                            <br>
+                            <em class="fragment">Markup is hidden and doesn't render until activated</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>No side-effects</strong>
+                            <br>
+                            <em class="fragment">Scripts don't run and media isn't retrieved until activated</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>Not in DOM tree</strong>
+                            <br>
+                            <em class="fragment">Not selectable by usual DOM methods</em>
+                            <br>
+                            <em class='fragment'>May be placed anywhere in head, body or frameset</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Using Template for Delayed Activation</h2>
+                        <pre class='fragment'><code class='html'>&lt;button onclick="example()"&gt;Use me&lt;/button&gt;
+&lt;div id="container"&gt;&lt;/div&gt;</code></pre>
+                        <pre class='fragment'><code class='html'>&lt;template&gt; 
+  &lt;div&gt;Template used: &lt;span&gt;0&lt;/span&gt;&lt;/div&gt; 
+  &lt;script&gt;alert('Foobar!')&lt;/script&gt; 
+&lt;/template&gt;
+</code></pre>
+                        <pre class='fragment'><code class='javascript'>function example() { 
+  var content = document.querySelector('template').content,
+      span = content.querySelector('span');
+
+  span.textContent = parseInt(span.textContent) + 1;
+
+  document.querySelector('#container')
+          .appendChild(document.importNode(content, true));
+}</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Generating the Meta-Control</h2>
+                        <pre class='fragment'><code class='xml'>&lt;fieldset is='multi-group-control' data-name='issues'&gt;
+    &lt;legend&gt;Issues&lt;/legend&gt;
+    &lt;template&gt;
+        &lt;input type='text' name='identifier'&gt;
+        &lt;textarea name='description'&gt;&lt;/textarea&gt;
+    &lt;/template&gt;
+&lt;/fieldset&gt;</code></pre>
+                        <pre class='fragment'><code>attachedCallback: {
+    value: function(){
+        var control = this;
+        this.template = $(this).children('template').get()[0];
+        this.container = document.createElement('div');
+        $(this).append(this.container);
+        this.$button = $('&lt;button&gt;').attr('type', 'button')
+                            .text('+')
+                            .click(function(){
+                                control.addControlGroup();
+                             })
+                            .appendTo(this);
+    }
+}</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Generating a Control Group</h2>
+                        <pre class='fragment'><code class='xml'>&lt;fieldset is='multi-group-control' data-name='issues'&gt;
+    &lt;legend&gt;Issues&lt;/legend&gt;
+    &lt;template&gt;
+        &lt;input type='text' name='identifier'&gt;
+        &lt;textarea name='description'&gt;&lt;/textarea&gt;
+    &lt;/template&gt;
+&lt;/fieldset&gt;</code></pre>
+                        <pre class='fragment'><code>addControlGroup: {
+    value: function(value){
+        var clone = document.importNode(this.template.content, true),
+            $newGroup = $('&lt;fieldset is="control-group"&gt;');
+
+        $newGroup.append(clone);
+        $(this.container).append($newGroup);
+
+        if(value !== undefined)
+            $newGroup.get()[0].value = value;
+    }
+}</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>The Meta-Group's Getter &amp; Setter</h2>
+                        <pre class='fragment'><code class='json'>[
+    { "name": "..", "description": ".." },
+    { "name": "..", "description": ".." }
+]</code></pre>
+                        <pre class='fragment'><code>get: function(){
+    var groups = [];
+    $(this.container).children().each(function(){
+        groups.push(this.value);
+    });
+    return groups;
+}</code></pre>
+                        <pre class='fragment'><code>set: function(values){
+    values.forEach(function(value){
+        this.addControlGroup(value);
+    }, this);
+}</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Leaky Implementation Details</h2>
+                        <p class='fragment'>What about namespace clashes?</p>
+                        <p><em class='fragment'>If we use a class in our widget, external definitions might leak in</em></p>
+                        <p class='fragment'>When building and using widgets, we want to...</p>
+                        <p>
+                            <em class='fragment'>Encapsulate implementation details</em>
+                            <br>
+                            <em class='fragment'>Isolate from exterior styles and behaviors</em>
+                        </p>
+                        <p class='fragment'><strong>We need to isolate the widget's DOM tree</strong></p>
+                    </section>
+                    
+                    <section>
+                        <h2>Shadow DOM</h2>
+                        <pre class='fragment'><code>this.container = document.createElement('div');
+
+$(this).append(this.container);</code></pre>
+                        <pre class='fragment'><code>var shadowContainer = document.createElement('div'),
+    shadow = shadowContainer.createShadowRoot();
+
+this.container = shadow;
+
+$(this).append(shadowContainer);
+</code></pre>
+                        <pre class='fragment'><code>&lt;div&gt;
+    #shadow-root
+        &lt;fieldset is="control-group"&gt;&lt;!-- .. --&gt;&lt;/fieldset&gt;
+        &lt;!-- .. --&gt;
+&lt;/div&gt;</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>A Lot More Than This</h2>
+                        <p class="fragment">Styling shadow DOM trees</p>
+                        <pre class="fragment"><code class="css">:host(:hover) { /* .. */ }
+:host-context(.my-ctx) { /* .. */ }
+</code></pre>
+                        <pre class="fragment"><code>[is="multi-group-control"] > ::shadow > [is="control-group"] {/* .. */}</code></pre>
+                        <p class="fragment">Projecting <code>content</code></p>
+                        <pre class="fragment"><code class="xml">&lt;div id="name-badge"&gt;
+  &lt;span class="f"&gt;Eric&lt;/span&gt;
+  &lt;span class="l"&gt;Bollens&lt;/span&gt;
+&lt;/div&gt;</code></pre>
+                        <pre class="fragment"><code class="xml">&lt;template id="name-badge-template"&gt; 
+  Hi! My name is
+  &lt;br&gt;&lt;content select=".l"&gt;&lt;/content&gt;, &lt;content select=".f"&gt;&lt;/content&gt;
+&lt;/template&gt;</code></pre>
+                    </section>
+                    
+                    <section>
+                        <h2>Use with Caution!</h2>
+                        <p class='fragment'>
+                            <strong>Shadow DOM & template polyfills have to wrap...</strong>
+                            <br><em class="fragment">Document, Window, Element, XMLHttpRequest</em><em class="fragment">, Node, NodeList, DOMTokenList, FormData, WebGLRenderingContext, Selection</em><em class="fragment">, and another 25 or so elements...</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Oh, and functions like...</strong>
+                            <br><em class="fragment">createElement, createEvent, getElementById, getSelection, querySelector, querySelectorAll</em><em class="fragment">, and another 15 or so core ones...</em>
+                        </p>
+                        <p class='fragment'>
+                            We love Web Components at CloudCompli, but...
+                            <br><strong>we do not yet use template and Shadow DOM</strong>
+                        </p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+                    
+                    <section>
+                        <h2>Experiences from the Real World</h2>
+                    </section>
+                    
+                    <section>
+                        <h2>This Stuff Isn't Easy</h2>
+                        <p class='fragment'>
+                            <strong>3 rewrites and 100 hours on our form components</strong>
+                            <br><em class='fragment'>But estimated savings producing forms over 10x that</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Edge cases and race conditions</strong>
+                            <br><em class='fragment'>Event model and asynchronous loading get messy fast</em>
+                        </p>
+                        <p class="fragment">
+                            <strong>Performance can be tough</strong>
+                            <br><em class="fragment">You're in the DOM node initialization process</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Browser bugs/inconsistencies and limited debugging</strong>
+                            <br><em class='fragment'>The browsers aren't doing this all right yet either</em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Browser Support, Polyfills and Failings</h2>
+                        <p class='fragment'>
+                            <strong>You are on the bleeding edge</strong>
+                            <br><em class='fragment'>But browsers are fixing bugs and shipping more</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Polyfills do pretty good with most of this</strong>
+                            <br><em class='fragment'>But pieces of it are definitely not for the feint of heart</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Web Components Polyfill</strong>
+                            <br><em class='fragment'><a href='https://github.com/WebComponents/webcomponentsjs' target='_blank'>github.com/WebComponents/webcomponentsjs</a></em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>ES6 Modules</strong>
+                            <br><em class='fragment'><a href='https://github.com/ModuleLoader/es6-module-loader' target='_blank'>github.com/ModuleLoader/es6-module-loader</a></em>
+                            <br><em class='fragment'><a href='https://github.com/google/traceur-compiler' target='_blank'>github.com/google/traceur-compiler</a></em>
+                        </p>
+                    </section>
+                    
+                    <section>
+                        <h2>Great Promise for the Future</h2>
+                        <p class='fragment'>
+                            <strong>We've only scratched the surface</strong>
+                            <br><em class='fragment'>So many more features and yet unforeseen outcomes</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Makes HTML future-proof</strong>
+                            <br><em class='fragment'>Allows us to define our own domain-specific elements</em>
+                        </p>
+                        <p class='fragment'>
+                            <strong>Start using Web Components today</strong>
+                            <br><em class='fragment'><a href='http://webcomponents.org/' target='_blank'>webcomponents.org</a></em>
+                            <br><em class='fragment'><a href='https://customelements.io/' target='_blank'>customelements.io</a></em>
+                            <br><em class='fragment'><a href='http://component.kitchen/' target='_blank'>component.kitchen</a></em>
+                        </p>
+                    </section>
+                    
+                </section>
+                
+                <section>
+					<h1>Thank You</h1>
+                    <h2>Any Questions?</h2>
 					<p>
-						These guys come in two forms, inline: <q cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;The nice thing about standards is that there are so many to choose from&rdquo;</q> and block:
-					</p>
-					<blockquote cite="http://searchservervirtualization.techtarget.com/definition/Our-Favorite-Technology-Quotations">
-						&ldquo;For years there has been a theory that millions of monkeys typing at random on millions of typewriters would
-						reproduce the entire works of Shakespeare. The Internet has proven this theory to be untrue.&rdquo;
-					</blockquote>
-				</section>
-
-				<section>
-					<h2>Intergalactic Interconnections</h2>
-					<p>
-						You can link between slides internally,
-						<a href="#/2/3">like this</a>.
-					</p>
-				</section>
-
-				<section>
-					<h2>Speaker View</h2>
-					<p>There's a <a href="https://github.com/hakimel/reveal.js#speaker-notes">speaker view</a>. It includes a timer, preview of the upcoming slide as well as your speaker notes.</p>
-					<p>Press the <em>S</em> key to try it out.</p>
-
-					<aside class="notes">
-						Oh hey, these are some notes. They'll be hidden in your presentation, but you can see them if you open the speaker notes window (hit 's' on your keyboard).
-					</aside>
-				</section>
-
-				<section>
-					<h2>Export to PDF</h2>
-					<p>Presentations can be <a href="https://github.com/hakimel/reveal.js#pdf-export">exported to PDF</a>, here's an example:</p>
-					<iframe src="//www.slideshare.net/slideshow/embed_code/42840540" width="445" height="355" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:3px solid #666; margin-bottom:5px; max-width: 100%;" allowfullscreen> </iframe>
-				</section>
-
-				<section>
-					<h2>Global State</h2>
-					<p>
-						Set <code>data-state="something"</code> on a slide and <code>"something"</code>
-						will be added as a class to the document element when the slide is open. This lets you
-						apply broader style changes, like switching the page background.
-					</p>
-				</section>
-
-				<section data-state="customevent">
-					<h2>State Events</h2>
-					<p>
-						Additionally custom events can be triggered on a per slide basis by binding to the <code>data-state</code> name.
-					</p>
-					<pre><code class="javascript" data-trim contenteditable style="font-size: 18px;">
-Reveal.addEventListener( 'customevent', function() {
-	console.log( '"customevent" has fired' );
-} );
-					</code></pre>
-				</section>
-
-				<section>
-					<h2>Take a Moment</h2>
-					<p>
-						Press B or . on your keyboard to pause the presentation. This is helpful when you're on stage and want to take distracting slides off the screen.
-					</p>
-				</section>
-
-				<section>
-					<h2>Much more</h2>
-					<ul>
-						<li>Right-to-left support</li>
-						<li><a href="https://github.com/hakimel/reveal.js#api">Extensive JavaScript API</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#auto-sliding">Auto-progression</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#parallax-background">Parallax backgrounds</a></li>
-						<li><a href="https://github.com/hakimel/reveal.js#keyboard-bindings">Custom keyboard bindings</a></li>
-					</ul>
-				</section>
-
-				<section style="text-align: left;">
-					<h1>THE END</h1>
-					<p>
-						- <a href="http://slides.com">Try the online editor</a> <br>
-						- <a href="https://github.com/hakimel/reveal.js">Source code &amp; documentation</a>
+						<small>Eric Bollens / <a href="mailto:eric@eb.io">eric@eb.io</a> / <a href="http://github.com/ebollens">ebollens [GitHub]</a> / <a href="http://twitter.com/ericbollens">@ericbollens [Twitter]</a></small>
 					</p>
 				</section>
 

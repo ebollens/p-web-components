@@ -1,0 +1,21 @@
+<!-- HTML Import for the input[is="type-lat"] element -->
+
+<script type='text/javascript'>
+    window.InputTypeLatElement = document.registerElement('type-lat', {
+        extends: 'input',
+        prototype: Object.create(HTMLInputElement.prototype, {
+            attachedCallback: {
+                value: function(){
+                    var self = this;
+                    self.type = 'number';
+                    self.min = -90;
+                    self.max = 90;
+                    self.step = 'any';
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        self.value = position.coords.latitude;
+                    });
+                }
+            }
+        })
+    });
+</script>

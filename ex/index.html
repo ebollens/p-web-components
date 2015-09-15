@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <title></title>
+
+        <!-- Polyfill for Custom Elements, Template, Shadow DOM and HTML Imports -->
+        <script type="text/javascript" src="libraries/webcomponents.js"></script>
+
+        <!-- Polyfill for ES6 syntax needed for the ES6 Module Loader -->
+        <script type='text/javascript' src="libraries/traceur.js"></script>
+
+        <!-- Polyfill for ES6 module loading as used by several elements with dependencies -->
+        <script type='text/javascript' src="libraries/es6-module-loader.js"></script>
+
+        <!-- Web Component definitions as an HTML import (recursively loads the individual elements) -->
+        <link rel='import' href='elements.html'>
+
+        <link rel='stylesheet' href='styles.css'>
+
+    </head>
+
+    <body>
+
+        <h1>Web Components Example: Hierarchical Forms</h1>
+
+        <form is="hierarchical-form" 
+              action="server/submit.php" 
+              method="POST" 
+              data-success="server/success.php" 
+              data-error="server/error.php">
+
+            <label>
+              Title
+              <input type="text" name="title">
+            </label>
+
+            <fieldset is="control-group" data-name="location">
+
+                <legend>Location</legend>
+
+                <label>
+                  Latitude
+                  <input is="type-lat" name="lat">
+                </label>
+
+                <label>
+                  Longitude
+                  <input is="type-lng" name="lng">
+                </label>
+
+                <label>
+                  Address
+                  <textarea name="address" id="i-address"></textarea>
+                </label>
+
+            </fieldset>
+
+            <fieldset is='multi-group-control' data-name='issues'>
+
+                <legend>Issues</legend>
+
+                <template>
+
+                    <label>
+                      Address
+                      <input type='text' name='name'>
+                    </label>
+
+                    <label>
+                      Description
+                      <textarea name='description'></textarea>
+                    </label>
+
+                </template>
+            </fieldset>
+
+            <input type="submit">
+
+        </form>
+
+        <script type="text/javascript">
+            $('form').get()[0].value = {
+                'title': 'Example',
+                'issues': [
+                    { 'name': 'Construction entrance', 'description': 'Track out present at time of inspection.' },
+                    { 'name': 'Staging area', 'description': 'Concrete mixing basins not properly stored.' }
+                ]
+            }
+        </script>
+
+    </body>
+
+</html>

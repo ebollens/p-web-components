@@ -1,0 +1,21 @@
+<!-- HTML Import for the input[is="type-lng"] element -->
+
+<script type='text/javascript'>
+    window.InputTypeLngElement = document.registerElement('type-lng', {
+        extends: 'input',
+        prototype: Object.create(HTMLInputElement.prototype, {
+            attachedCallback: {
+                value: function(){
+                    var self = this;
+                    self.type = 'number';
+                    self.min = -180;
+                    self.max = 180;
+                    self.step = 'any';
+                    navigator.geolocation.getCurrentPosition(function(position){
+                        self.value = position.coords.longitude;
+                    });
+                }
+            }
+        })
+    });
+</script>

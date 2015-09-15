@@ -1,0 +1,24 @@
+[is="multi-group-control"] > ::shadow > [is="control-group"] {
+    border: none;
+    border-bottom: 1px solid #ccc;
+}
+
+[is="multi-group-control"] > ::shadow > [is="control-group"]:last-child {
+    border: none;
+}
+
+[is="multi-group-control"] > ::shadow label {
+  margin-bottom: 10px;
+}
+
+[is="multi-group-control"] > ::shadow label, [is="multi-group-control"] > ::shadow input, [is="multi-group-control"] > ::shadow textarea {
+    display: block;
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+label, input, textarea {
+  display: block;
+}

@@ -1,0 +1,58 @@
+<!-- HTML Import for the fieldset[is="control-group"] element -->
+
+<script type="text/javascript" src="../libraries/jquery.js"></script>
+
+<script type='text/javascript'>
+    System.import('helpers/dataName').then(function(dataName){
+        window.ControlGroupElement = document.registerElement('multi-group-control', {
+            extends: 'fieldset',
+            prototype: Object.create(HTMLDivElement.prototype, {
+                name: dataName,
+                attachedCallback: {
+                    value: function(){
+                        var control = this,
+                            shadowContainer = document.createElement('div'),
+                            shadow = shadowContainer.createShadowRoot();
+
+                        $(this).append(shadowContainer);
+
+                        this.template = $(this).children('template').get()[0];
+                        this.container = shadow;
+                        this.$button = $('<button>').attr('type', 'button')
+                                     .text('+')
+                                     .click(function(){
+                                         control.addControlGroup();
+                                      })
+                                     .appendTo(this);
+                    }
+                },
+                addControlGroup: {
+                    value: function(value){
+                        var clone = document.importNode(this.template.content, true),
+                            $newGroup = $('<fieldset is="control-group">');
+
+                        $newGroup.append(clone);
+                        this.container.appendChild($newGroup.get()[0]);
+
+                        if(value !== undefined)
+                            $newGroup.get()[0].value = value;
+                    }
+                },
+                value: {
+                    get: function(){
+                        var groups = [];
+                        $(this.container).children().each(function(){
+                            groups.push(this.value);
+                        });
+                        return groups;
+                    },
+                    set: function(values){
+                        values.forEach(function(value){
+                            this.addControlGroup(value);
+                        }, this);
+                    }
+                }
+            })
+        });
+    });
+</script>
