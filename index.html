@@ -70,7 +70,7 @@
                         </p>
                         <p class='fragment'>
                             <strong>Example code from this presentation</strong>
-                            <br><em><a href='https://github.com/ebollens/p-web-components/ex' target='_blank'>github.com/ebollens/p-web-components/ex</a></em>
+                            <br><em><a href='https://github.com/ebollens/p-web-components/tree/gh-pages/ex' target='_blank'>github.com/ebollens/p-web-components/tree/gh-pages/ex</a></em>
                         </p>
                         <p class='fragment'>
                             <strong>This presentation is open source</strong>
@@ -325,7 +325,7 @@ var XFoo = document.registerElement('x-foo', {
                             <br><em>when an instance is inserted into the document</em></p>
                         <p class="fragment"><strong>detachedCallback</strong>
                             <br><em>when an instance is removed from the document</em></p>
-                        <p class="fragment"><strong>attribuedChangedCallback(attrName, oldVal, newVal)</strong>
+                        <p class="fragment"><strong>attributeChangedCallback(attrName, oldVal, newVal)</strong>
                             <br><em>when an attribute is added, removed or updated</em></p>
                     </section>
                     
@@ -1002,11 +1002,11 @@ $(this).append(shadowContainer);
 </code></pre>
                         <pre class="fragment"><code>[is="multi-group-control"] > ::shadow > [is="control-group"] {/* .. */}</code></pre>
                         <p class="fragment">Projecting <code>content</code></p>
-                        <pre class="fragment"><code class="xml">&lt;div id="name-badge"&gt;
+                        <pre class="fragment"><code class="xml">&lt;div is="name-badge"&gt;
   &lt;span class="f"&gt;Eric&lt;/span&gt;
   &lt;span class="l"&gt;Bollens&lt;/span&gt;
 &lt;/div&gt;</code></pre>
-                        <pre class="fragment"><code class="xml">&lt;template id="name-badge-template"&gt; 
+                        <pre class="fragment"><code class="xml">&lt;template&gt; 
   Hi! My name is
   &lt;br&gt;&lt;content select=".l"&gt;&lt;/content&gt;, &lt;content select=".f"&gt;&lt;/content&gt;
 &lt;/template&gt;</code></pre>
